@@ -1,3 +1,4 @@
+import math
 def so(k):
     n = True
     if k % 2 == 0 and k != 2:
