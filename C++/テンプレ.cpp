@@ -1,14 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
+//mendoi
+//#define int long long   // aaaaaaaaaaaaaaaaaa
 #define rep(i,a,n) for (int i=a;i<n;i++)
 #define per(i,a,n) for (int i=n-1;i>=a;i--)
 #define pb push_back
 #define mp make_pair
 #define all(x) (x).begin(),(x).end()
+#define allr(x) (x).rbegin(),(x).rend()
 #define fi first
 #define se second
 #define SZ(x) ((int)(x).size())
 typedef vector<int> VI;
+typedef vector<vector<int>> VVI;
 typedef long long ll;
 typedef pair<int,int> PII;
 const ll mod=1000000007;
@@ -20,10 +24,31 @@ template <class T>ostream &operator<<(ostream &o,const vector<T>&v)
 int n;
 
 
-int main() {
-	scanf("%d",&n);
-	VI v(100010);
-	rep(i,0,n){cin >> v[i];
+signed main() {
+	int N,M;
+	std::cin >> N>>M;
+	std::vector<std::vector<int>> g;
+	rep(i,0,M){
+		int l,r,d;
+		scanf("%lld %lld %lld",&l,&r,&d);
+		a--, b--;
+		std::vector<int> v = {y, a, b};
+		edges.emplace_back(v);
 	}
 	printf("%d",n);
+}
+//初期化
+int a[100009]
+for(i=0;i<(sizeof(a)/sizeof(a[0]));i++){
+a[i]=-1;
+
+//graph
+vector <pair<int, int> >  g[100009];
+rep(i,0,M){
+	int l,r,d;
+	scanf("%d %d %d",&l,&r,&d);
+	l--, r--;
+	g[l].push_back(make_pair(r, d));
+	g[r].push_back(make_pair(l, -d));
+}
 }

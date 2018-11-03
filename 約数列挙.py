@@ -22,6 +22,10 @@ def factorization(n):
             x += 4
     if m > 1: buff.append((m, 1))
     return buff
+#a = factorization(n)
+#b = []
+#for i,j in a:
+#  b.append(i)
 def divisor_sub(p, q):
     a = []
     for i in range(0, q + 1):
@@ -36,3 +40,17 @@ def divisor(n):
     for p, q in xs[1:]:
         ys = [x * y for x in divisor_sub(p, q) for y in ys]
     return sorted(ys)
+#素因数列挙
+def prime_decomposition(n):
+  i = 2
+  table = []
+  while i * i <= n:
+    while n % i == 0:
+      n //= i
+      table.append(i)
+    i += 1
+  if n > 1:
+    table.append(n)
+  table = set(table)
+  table = list(table)
+  return table

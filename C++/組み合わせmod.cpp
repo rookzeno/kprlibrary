@@ -21,3 +21,13 @@ long long getC(int a, int b)
 {
   return (((fact[a] * revFact[b]) % mod) * revFact[a-b]) % mod;
 }
+
+//組み合わせ
+long double comb[2001][2001];
+comb[0][0] = 1;
+for(i=1; i<=N; i++){
+    comb[i][0] = 1;
+    for(j=1; j<=i; j++){
+        comb[i][j] = comb[i-1][j-1] + comb[i-1][j];
+    }
+}
