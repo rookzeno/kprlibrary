@@ -35,12 +35,47 @@ class UnionFind():
                 self.table[s1] += -1
                 self.table[s2] = s1
         return
-        
+
 uni = UnionFind(n)
 for i in range(len(gra)):
   hen = gra[i]
   if (uni.find(hen[0]) != uni.find(hen[1])):
     ans += hen[2]
+    uni.union(hen[0],hen[1])
+    uc += 1
+  if uc == n-1:
+    break
+print(ans)
+
+#その２
+n,m,k = map(int,input().split())
+a = []
+for i in range(m):
+  x,y,z = map(int,input().split())
+  a.append([x-1,y-1,z])
+c = [int(input())for i in range(k)]
+gra = []
+uc = 0
+ans = 0
+for i in range(m):
+  ans += a[i][2]
+hissu = []
+uni = UnionFind(n)
+for i in c:
+  hissu.append(a[i-1])
+for i in range(k):
+  hen = hissu[i]
+  if (uni.find(hen[0]) != uni.find(hen[1])):
+    uc += 1
+  ans -= hen[2]
+  uni.union(hen[0],hen[1])
+for i in range(m):
+  gra.append(a[i])
+gra = sorted(gra, key = lambda x: x[2])
+for i in range(len(gra)):
+  hen = gra[i]
+  if (uni.find(hen[0]) != uni.find(hen[1])):
+    ans -= hen[2]
     uni.union(hen[0],hen[1])
     uc += 1
   if uc == n-1:
