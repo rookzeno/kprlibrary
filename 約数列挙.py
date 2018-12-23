@@ -4,7 +4,7 @@ def factorization(n):
         c = 0
         while n % m == 0:
             c += 1
-            n /= m
+            n //= m
         return c, n
     #
     buff = []
