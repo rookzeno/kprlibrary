@@ -6,5 +6,5 @@ def press(a):
     b.sort()
     c = [0] * n
     for i in range(n):
-        c[i] = bisect.bisect_left(b,a[i]))
+        c[i] = bisect.bisect_left(b,a[i])
     return b,c
