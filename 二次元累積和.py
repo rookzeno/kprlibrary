@@ -1,3 +1,8 @@
+rui = [[0]* (n+1) for i in range(n+1)]
+for i in range(1, n+1):
+    for j in range(1, n+1):
+        rui[i][j] += rui[i][j - 1] + rui[i - 1][j] - rui[i - 1][j - 1]+a[i-1][j-1]
+
 n,k = map(int,input().split())
 dpw = [[0]*(4*k+1) for i in range(4*k+1)]
 for i in range(n):
